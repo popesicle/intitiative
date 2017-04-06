@@ -1,0 +1,46 @@
+<div class="layout-column body">
+
+{{#each model as |player|}}
+  <div class="layout-row">
+    {{player.name}} {{player.initiative}}
+  </div>
+    {{paper-divider}}
+
+{{/each}}
+</div>
+
+{{#paper-form onSubmit=(route-action "createPlayer" name initiative) as |form|}}
+  <div class="layout-row layout-align-center-center">
+    <div class="layout-column">
+      {{form.input
+        label="Name"
+        type='text'
+        value=name
+        onChange=(action (mut name))
+        required=true}}
+    </div>
+
+    <div class="layout-column">
+      {{form.input
+        label="Initiative"
+        type='number'
+        value=initiative
+        onChange=(action (mut initiative))
+        required=true}}
+    </div>
+
+    <div class="layout-column">
+      {{#form.submit-button
+        raised=true
+        primary=true
+        disabled=form.isInvalid}}
+
+        Submit
+      {{/form.submit-button}}
+    </div>
+
+    <div class="layout-column">
+      timer
+    </div>
+  </div>
+{{/paper-form}}
