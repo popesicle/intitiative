@@ -1,5 +1,16 @@
-@import 'ember-paper';
-
-.body {
+body {
+  margin: 0;
   overflow: scroll;
+}
+.content {
+  height: 90vh;
+  overflow: scroll;
+}
+
+.form-row {
+  height: 10vh;
+}
+
+.player-row {
+  height: 70px;
 }

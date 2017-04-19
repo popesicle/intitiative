@@ -1,5 +1,6 @@
 {
   "name": "intitiative",
   "dependencies": {
+    "framework7": "^1.5.4"
   }
 }

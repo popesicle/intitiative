@@ -9,6 +9,10 @@ export default Route.extend({
     return this.store.findAll('player');
   },
 
+  setupController: function(controller, model) {
+    controller.set('players', model);
+  },
+
   actions: {
     createPlayer(name, init) {
       let player = this.store.createRecord('player', {

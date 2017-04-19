@@ -15,6 +15,11 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@html-next/flexi-config": "2.0.0-rc.1",
+    "@html-next/flexi-default-styles": "2.0.0-rc.2",
+    "@html-next/flexi-dsl": "2.0.0-rc.2",
+    "@html-next/flexi-layouts": "2.0.0-rc.2",
+    "@html-next/flexi-sustain": "2.0.0-beta.12",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
     "ember-cli": "2.11.1",
@@ -36,11 +41,11 @@
     "ember-data": "^2.11.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
-    "ember-paper": "1.0.0-alpha.19",
     "ember-resolver": "^2.0.3",
     "ember-route-action-helper": "2.0.2",
     "ember-source": "~2.11.0",
     "ember-welcome-page": "^2.0.2",
+    "flexi": "2.0.0-rc.1",
     "loader.js": "^4.0.10"
   },
   "engines": {

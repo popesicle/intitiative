@@ -1,46 +1,40 @@
-<div class="layout-column body">
+<screen>
+  <page>
+    <vbox>
+      <vbox fill class='content'  >
+        {{#each sortedPlayers as |player|}}
+          <hbox fit align='center' class='player-row'>
+            <box align='start'>
+              {{player.name}}
+            </box>
 
-{{#each model as |player|}}
-  <div class="layout-row">
-    {{player.name}} {{player.initiative}}
-  </div>
-    {{paper-divider}}
+            <box align='end'>
+              <button {{action 'addOne' player}}>
+                +
+              </button>
+              <button {{action 'takeAwayOne' player}}>
+                -
+              </button>
+            </box>
 
-{{/each}}
-</div>
+            <box fit align='end'>
+              {{player.initiative}}
+            </box>
+          </hbox>
+        {{/each}}
+      </vbox>
 
-{{#paper-form onSubmit=(route-action "createPlayer" name initiative) as |form|}}
-  <div class="layout-row layout-align-center-center">
-    <div class="layout-column">
-      {{form.input
-        label="Name"
-        type='text'
-        value=name
-        onChange=(action (mut name))
-        required=true}}
-    </div>
+      <hbox fit align='center' justify='center'>
+        {{input type='text' value=name}}
 
-    <div class="layout-column">
-      {{form.input
-        label="Initiative"
-        type='number'
-        value=initiative
-        onChange=(action (mut initiative))
-        required=true}}
-    </div>
+        {{input type='number' value=initiative}}
 
-    <div class="layout-column">
-      {{#form.submit-button
-        raised=true
-        primary=true
-        disabled=form.isInvalid}}
+        <button {{action 'createPlayer' name initiative}}>
+          ADD
+        </button>
 
-        Submit
-      {{/form.submit-button}}
-    </div>
-
-    <div class="layout-column">
-      timer
-    </div>
-  </div>
-{{/paper-form}}
+        {{turn-timer}}
+      </hbox>
+    </vbox>
+  </page>
+</screen>
